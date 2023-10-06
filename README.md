@@ -20,6 +20,11 @@ $ php artisan migrate
 $ php artisan db:seed 
 ```
 
+## Create migrarion
+```bash
+php artisan make:migration create_migration_table
+```
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
