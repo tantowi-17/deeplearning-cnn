@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout/main');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/login', [DashboardController::class, 'index']);
+Route::get('/auth/login', [AuthController::class, 'login']);
+Route::post('/auth/login-process', [AuthController::class, 'loginprocess'])->name('loginprocess');
+//Route::post('/loginprocess', [AuthController::class, 'loginProcess'])->name('loginprocess');
+
