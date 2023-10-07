@@ -26,7 +26,7 @@
                 <div class="content">
 
                     @yield('content')
-                    
+
                 </div>
 
                 @include('layout.footer')
@@ -38,9 +38,9 @@
         <script src="{{url('assets/js/vendor.min.js')}}"></script>
         <script src="{{url('assets/libs/morris-js/morris.min.js')}}"></script>
         <script src="{{url('assets/libs/raphael/raphael.min.js')}}"></script>
-        <script src="{{url('assets/js/pages/dashboard.init.js')}}"></script>
+        {{--<script src="{{url('assets/js/pages/dashboard.init.js')}}"></script>--}}
         <script src="{{url('assets/js/app.min.js')}}"></script>
         <!-- End Javascript -->
-        
+
     </body>
 </html>
