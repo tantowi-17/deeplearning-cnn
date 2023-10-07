@@ -34,7 +34,12 @@
                                         </div>
                                         <h5 class="text-muted py-3 font-16">Welcome on Deeplearning CNN Website</h5>
                                     </div>
-                                    <form id="loginForm" method="POST" class="validate">
+                                    @if($message = Session::get('failed'))
+                                    <div class="alert alert-danger" role="alert">
+                                        {{$message}}
+                                    </div>
+                                    @endif
+                                    <form id="loginForm" action="{{ route('login-process') }}" method="POST" class="validate">
                                         @csrf
                                         <div class="form-group mb-3">
                                             <input class="form-control" name="name" type="text" required="" placeholder="Username">

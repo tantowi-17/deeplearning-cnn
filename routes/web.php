@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/login', [DashboardController::class, 'index']);
-Route::get('/auth/login', [AuthController::class, 'login']);
-Route::post('/auth/login-process', [AuthController::class, 'loginprocess'])->name('loginprocess');
-//Route::post('/loginprocess', [AuthController::class, 'loginProcess'])->name('loginprocess');
+//Dashboard
+Route::get('/', [HomeController::class, 'index'])->name('dashboard');
+
+//Auth
+Route::get('/auth/login', [AuthController::class, 'login'])->name('login');
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/auth/login-process', [AuthController::class, 'login_process'])->name('login-process');
+
 
