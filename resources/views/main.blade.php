@@ -10,6 +10,13 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{url('assets/images/favicon.ico')}}">
 
+        <!-- Table datatable css -->
+        <link href="{{url('assets/libs/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+
+        <link href="{{url('assets/libs/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{url('assets/libs/datatables/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{url('assets/libs/datatables/select.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+
         <!-- App css -->
         <link href="{{url('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
         <link href="{{url('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
@@ -34,13 +41,29 @@
             </div>
         </div>
 
-        <!-- Start Javascript -->
+        <!-- Start Javascript Plugin -->
         <script src="{{url('assets/js/vendor.min.js')}}"></script>
         <script src="{{url('assets/libs/morris-js/morris.min.js')}}"></script>
         <script src="{{url('assets/libs/raphael/raphael.min.js')}}"></script>
-        {{--<script src="{{url('assets/js/pages/dashboard.init.js')}}"></script>--}}
+        <script src="{{url('assets/js/pages/datatables.init.js')}}"></script>
+
+        <script src="{{url('assets/libs/datatables/jquery.dataTables.min.js')}}"></script>
+        <script src="{{url('assets/libs/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+        <script src="{{url('assets/libs/datatables/dataTables.responsive.min.js')}}"></script>
+        <script src="{{url('assets/libs/datatables/responsive.bootstrap4.min.js')}}"></script>
+
+        <script src="{{url('assets/libs/datatables/buttons.bootstrap4.min.js')}}"></script>
+        <script src="{{url('assets/libs/datatables/dataTables.buttons.min.js')}}"></script>
+
+        <script src="{{url('assets/libs/datatables/dataTables.keyTable.min.js')}}"></script>
+        <script src="{{url('assets/libs/datatables/dataTables.select.min.js')}}"></script>
+
+        <!-- Datatables init -->
+        <script src="{{url('assets/js/pages/datatables.init.js')}}"></script>
+
         <script src="{{url('assets/js/app.min.js')}}"></script>
-        <!-- End Javascript -->
+        <!-- End Javascript Plugin -->
 
     </body>
 </html>
