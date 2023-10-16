@@ -18,11 +18,17 @@ Lalu apa yang membedakan? Arsitektur dari CNN dibagi menjadi 2 bagian besar, Fea
 $ composer install
 $ php artisan migrate
 $ php artisan db:seed 
+$ php artisan db:seed --class=UserSeeder
+$ php artisan db:seed --class=CategorySeeder
 ```
-
+## Running project
+```bash
+php artisan serve
+```
 ## Create migrarion
 ```bash
 php artisan make:migration create_migration_table
+php artisan migrate:refresh
 ```
 
 ## License
