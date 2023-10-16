@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,7 @@ Route::post('/auth/login-process', [AuthController::class, 'login_process'])->na
 
 // Users
 Route::get('/users', [UserController::class, 'index'])->name('users');
+
+// Category
+Route::get('/category', [CategoryController::class, 'index'])->name('category');
 

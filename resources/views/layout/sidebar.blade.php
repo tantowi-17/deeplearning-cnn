@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{route('category')}}">
                         <i class="mdi mdi-seed-outline"></i>
                         <span> Category Expression </span>
                     </a>

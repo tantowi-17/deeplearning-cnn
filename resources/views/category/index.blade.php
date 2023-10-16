@@ -6,10 +6,10 @@
             <div class="page-title-box">
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item active">User Listing</li>
+                        <li class="breadcrumb-item active">Category Listing</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Users</h4>
+                <h4 class="page-title">Category</h4>
             </div>
         </div>
     </div>
@@ -20,29 +20,24 @@
                     <thead>
                     <tr>
                         <th>No</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Role</th>
+                        <th>Image</th>
+                        <th>Category</th>
+                        <th>Description</th>
                         <th>Created Date</th>
                         <th>Last Updated</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($users as $index => $value)
+                    @foreach($categories as $index => $value)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $value->name }}</td>
-                            <td>{{ $value->email }}</td>
-                                @php
-                                    $maskedPassword = str_repeat('*', strlen($value->password) - 2) . substr($value->password, -10);
-                                @endphp
-                            <td>{{ $maskedPassword }}</td>
-                            <td>{{ $value->role }}</td>
+                            <td>{{ $value->image }}</td>
+                            <td>{{ $value->category }}</td>
+                            <td class="text-wrap">{{ $value->description }}</td>
                             <td>{{ $value->created_at }}</td>
                             <td>{{ $value->updated_at }}</td>
                         </tr>
-                    @endforeach
+                        @endforeach
                     </tbody>
                 </table>
             </div>
