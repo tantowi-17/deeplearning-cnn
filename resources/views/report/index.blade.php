@@ -6,10 +6,10 @@
             <div class="page-title-box">
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item active">Category Listing</li>
+                        <li class="breadcrumb-item active">Reports Listing</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Category</h4>
+                <h4 class="page-title">Reports</h4>
             </div>
         </div>
     </div>
@@ -20,20 +20,18 @@
                     <thead>
                     <tr>
                         <th>No</th>
-                        <th>Image</th>
+                        <th>Name</th>
                         <th>Category</th>
-                        <th>Description</th>
                         <th>Created Date</th>
                         <th>Last Updated</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($categories as $index => $value)
+                    @foreach($reports as $index => $value)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $value->image }}</td>
-                            <td class="text-center"><span class="badge badge-success badge-pill">{{ $value->category }}</span></td>
-                            <td class="text-wrap">{{ $value->description }}</td>
+                            <td>{{ $value->name }}</td>
+                            <td class="text-center"><span class="badge badge-success badge-pill">{{ $value->category_id }}</span></td>
                             <td>{{ $value->created_at}}</td>
                             <td>{{ $value->updated_at }}</td>
                         </tr>

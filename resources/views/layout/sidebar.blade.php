@@ -16,27 +16,20 @@
                         <span> Dashboard </span>
                     </a>
                 </li>
-
-                <li>
-                    <a href="{{route('users')}}">
-                        <i class="mdi mdi-account"></i>
-                        <span> Users </span>
-                    </a>
-                </li>
                 <li>
                     <a href="{{route('category')}}">
                         <i class="mdi mdi-seed-outline"></i>
                         <span> Category Expression </span>
                     </a>
                 </li>
+{{--                <li>--}}
+{{--                    <a href="#">--}}
+{{--                        <i class="mdi mdi-chart-arc"></i>--}}
+{{--                        <span> Customers </span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
                 <li>
-                    <a href="#">
-                        <i class="mdi mdi-chart-arc"></i>
-                        <span> Customers </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
+                    <a href="{{route('report')}}">
                         <i class="mdi mdi-chart-bar"></i>
                         <span> Reports </span>
                     </a>
@@ -51,7 +44,12 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="#">Aplications</a></li>
+                        <li>
+                            <a href="{{route('users')}}">
+                                <i class="mdi mdi-account"></i>
+                                <span> Users </span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
