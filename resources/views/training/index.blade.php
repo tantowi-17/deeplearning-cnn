@@ -43,8 +43,8 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $value->name }}</td>
                             <td>{{ $value->epoch }}</td>
-                            <td>{{ number_format($value->loss, 2) }}</td>
-                            <td>{{ number_format($value->accuracy, 2) }}</td>
+                            <td>{{ round($value->loss, 2) }}%</td>
+                            <td>{{ round($value->accuracy, 2) }}%</td>
                             <td>{{ $value->created_at}}</td>
                             <td>{{ $value->updated_at }}</td>
                         </tr>
