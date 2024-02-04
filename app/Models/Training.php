@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Report extends Model
+class Training extends Model
 {
     use HasFactory, Notifiable;
 
-    public $table = "report";
+    public $table = "training";
     /**
      * The attributes that are mass assignable.
      *
@@ -18,10 +18,10 @@ class Report extends Model
      */
     protected $fillable = [
         'name',
-        'user_id',
-        'gender',
-        'expression',
+        'epoch',
+        'loss',
+        'accuracy',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 }

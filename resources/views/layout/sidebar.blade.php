@@ -22,12 +22,12 @@
                         <span> Category Expression </span>
                     </a>
                 </li>
-{{--                <li>--}}
-{{--                    <a href="#">--}}
-{{--                        <i class="mdi mdi-chart-arc"></i>--}}
-{{--                        <span> Customers </span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+                <li>
+                    <a href="{{route('training')}}">
+                        <i class="mdi mdi-chart-arc"></i>
+                        <span> Data Training </span>
+                    </a>
+                </li>
                 <li>
                     <a href="{{route('report')}}">
                         <i class="mdi mdi-chart-bar"></i>

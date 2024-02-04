@@ -1,1 +1,3 @@
-$(function(){$(".table-responsive").responsiveTable({addDisplayAllBtn:"btn btn-primary"})});
+$(function () {
+    $(".table-responsive").responsiveTable({addDisplayAllBtn: "btn btn-primary"})
+});

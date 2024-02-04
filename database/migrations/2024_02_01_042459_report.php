@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('report', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('category_id')->unsigned();
+            $table->integer('user_id');
+            $table->string('gender');
+            $table->string('expression');
             $table->timestamps();
         });
     }

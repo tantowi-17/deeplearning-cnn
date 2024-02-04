@@ -11,7 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('training', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('epoch');
+            $table->string('loss');
+            $table->string('accuracy');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('training');
     }
 };
