@@ -8,7 +8,7 @@
 
             <ul class="metismenu" id="side-menu">
 
-                <li class="menu-title">deeplearning</li>
+                <li class="menu-title">deep learning</li>
 
                 <li>
                     <a href="/">

@@ -22,7 +22,7 @@
                         <option value="10">Epoch 10</option>
                         <option value="20">Epoch 20</option>
                         <option value="50">Epoch 50</option>
-                        <option value="100">Kasir 100</option>
+                        <option value="100">Epoch 100</option>
                     </select>
                 </div>
                 <table id="filterTable" data-index="2" class="table table-bordered table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">

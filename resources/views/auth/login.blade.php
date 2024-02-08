@@ -27,12 +27,11 @@
                                 <div class="card-body p-4">
 
                                     <div class="text-center">
-                                        <div class="my-3">
+                                        <div class="my-5">
                                             <a href="#">
-                                                <span><img src="{{url('assets/images/logo.png')}}" alt="" height="28"></span>
+                                                <span><img src="{{url('assets/images/logo-cnn-dark.svg')}}" alt="" height="100"></span>
                                             </a>
                                         </div>
-                                        <h5 class="text-muted py-3 font-16">Welcome on Deeplearning CNN Website</h5>
                                     </div>
                                     @if($message = Session::get('failed'))
                                     <div class="alert alert-danger" role="alert">

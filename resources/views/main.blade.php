@@ -10,6 +10,9 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{url('assets/images/favicon.ico')}}">
 
+        <!-- C3 Chart css -->
+        <link href="{{url('assets/libs/c3/c3.min.css')}}" rel="stylesheet" type="text/css" />
+
         <!-- Table datatable css -->
         <link href="{{url('assets/libs/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
 
@@ -64,9 +67,13 @@
         <!-- Datatables init -->
         <script src="{{url('assets/js/pages/datatables.init.js')}}"></script>
 
+        <!--C3 Chart-->
+        <script src="{{url('assets/libs/d3/d3.min.js')}}"></script>
+        <script src="{{url('assets/libs/c3/c3.min.js')}}"></script>
+
         <script src="{{url('assets/js/app.min.js')}}"></script>
         <script src="{{url('assets/js/report.js')}}"></script>
+        <script src="{{url('assets/js/dashboard.js')}}"></script>
         <!-- End Javascript Plugin -->
-
     </body>
 </html>
