@@ -122,4 +122,30 @@ class HomeController extends Controller
             return redirect(route('login'));
         }
     }
+    public function reports(Request $request)
+    {
+        $reports = Report::all();
+        $gender = [];
+        $expression = [];
+        $groupedGenderData = $reports->groupBy('gender');
+        $genderCounts = $groupedGenderData->map->count();
+
+        $groupedExpressionData = $reports->groupBy('expression');
+        $expressionCounts = $groupedExpressionData->map->count();
+
+        $gender['gender'][] = ['Gender', 'Count'];
+        foreach ($genderCounts as $gen => $count) {
+            $gender['columns'][] = [$gen, $count];
+        }
+
+        $expression['expression'][] = ['Expression', 'Count'];
+        foreach ($expressionCounts as $exp => $count) {
+            $expression['columns'][] = [$exp, $count];
+        }
+
+        return response()->json([
+            'gender' => $gender,
+            'expression' => $expression
+        ]);
+    }
 }

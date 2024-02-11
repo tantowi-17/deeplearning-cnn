@@ -45,6 +45,23 @@ $(document).ready(function(){
         });
     }
 
+    /**
+     * Update C3 cart realtime
+     */
+    var updateChart = function () {
+        $.ajax({
+            url: '/reports',
+            success: function (data) {
+                createC3Pie(_reportExpression, data.gender);
+                createC3Pie(_reportExpression, data.expression);
+            },
+            error: function (xhr, status, error) {
+                console.error("Failed to fetch data:", error);
+            }
+        });
+    }
+    setInterval(updateChart, 5000);
+
     // REPORTS
     var _reportGenders = _reportGender.data("report-gender");
     var _reportExpressions = _reportExpression.data("report-expression");
