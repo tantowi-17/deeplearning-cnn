@@ -3,6 +3,8 @@ $(document).ready(function(){
     var _lineRegionsEpoch20 = $("#line-regions-epoch20");
     var _lineRegionsEpoch50 = $("#line-regions-epoch50");
     var _lineRegionsEpoch100 = $("#line-regions-epoch100");
+    var _reportGender = $("#report-gender");
+    var _reportExpression = $("#report-expression");
 
     /**
      * Create C3 Line Regions Chart
@@ -22,6 +24,32 @@ $(document).ready(function(){
 
         });
     }
+
+    /**
+     * Create C3 Pie
+     * @param {jQuery} id - jQuery object representing the DOM element where the chart will be bound.
+     * @param {Array} report - Array containing data points for report.
+     */
+    var createC3Pie = function (id, report) {
+        const chart = c3.generate({
+            bindto: "#" + id.attr('id'),
+            data: {
+                columns: report.columns,
+                type: "pie",
+            },
+            axis: {
+                x: {
+                    type: 'category'
+                }
+            }
+        });
+    }
+
+    // REPORTS
+    var _reportGenders = _reportGender.data("report-gender");
+    var _reportExpressions = _reportExpression.data("report-expression");
+    createC3Pie(_reportGender, _reportGenders);
+    createC3Pie(_reportExpression, _reportExpressions);
 
     // EPOCH 10
     var loss10 = _lineRegionsEpoch10.data("loss10");

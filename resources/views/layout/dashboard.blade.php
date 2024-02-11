@@ -123,5 +123,35 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card-box tilebox-one">
+                <h4 class="header-title">Report by gender</h4>
+                <p class="sub-header">
+                    Calculation from report data with gender
+                </p>
+
+                <div class="p-3" dir="ltr">
+                    <div id="report-gender" data-report-gender="{{ json_encode($gender) }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card-box tilebox-one">
+                <h4 class="header-title">Report by expression</h4>
+                <p class="sub-header">
+                    Calculation from report data with expression
+                </p>
+
+                <div class="p-3" dir="ltr">
+                    <div id="report-expression" data-report-expression="{{ json_encode($expression) }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

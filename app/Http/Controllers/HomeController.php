@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Report;
 use App\Models\Training;
 use Illuminate\Http\Request;
 use Auth;
@@ -10,6 +11,25 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
+        $reports = Report::all();
+        $gender = [];
+        $expression = [];
+        $groupedGenderData = $reports->groupBy('gender');
+        $genderCounts = $groupedGenderData->map->count();
+
+        $groupedExpressionData = $reports->groupBy('expression');
+        $expressionCounts = $groupedExpressionData->map->count();
+
+        $gender['gender'][] = ['Gender', 'Count'];
+        foreach ($genderCounts as $gen => $count) {
+            $gender['columns'][] = [$gen, $count];
+        }
+
+        $expression['expression'][] = ['Expression', 'Count'];
+        foreach ($expressionCounts as $exp => $count) {
+            $expression['columns'][] = [$exp, $count];
+        }
+
         $trainings10 = Training::where('epoch', 10)->get();
         $trainings20 = Training::where('epoch', 20)->get();
         $trainings50 = Training::where('epoch', 50)->get();
@@ -93,6 +113,9 @@ class HomeController extends Controller
             $this->data['loss100'] = $loss100;
             $this->data['accuracy100'] = $accuracy100;
             $this->data['regions100'] = $regions10;
+
+            $this->data['gender'] = $gender;
+            $this->data['expression'] = $expression;
 
             return view('layout/dashboard', $this->data);
         } else {
