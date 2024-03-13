@@ -21,6 +21,8 @@ class Training extends Model
         'epoch',
         'loss',
         'accuracy',
+        'val_loss',
+        'val_accuracy',
         'created_at',
         'updated_at',
     ];

@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row d-none">
         <div class="col-md-6 col-xl-3">
             <div class="card-box tilebox-one">
                 <i class="icon-layers float-right m-0 h2 text-muted"></i>
@@ -56,6 +56,70 @@
     <div class="row">
         <div class="col-md-6">
             <div class="card-box tilebox-one">
+                <h4 class="header-title">Report by gender</h4>
+                <p class="sub-header">
+                    Calculation from report data with gender
+                </p>
+
+                <div class="p-3" dir="ltr">
+                    <div id="report-gender" data-report-gender="{{ json_encode($gender) }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card-box tilebox-one">
+                <h4 class="header-title">Report by expression</h4>
+                <p class="sub-header">
+                    Calculation from report data with expression
+                </p>
+
+                <div class="p-3" dir="ltr">
+                    <div id="report-expression" data-report-expression="{{ json_encode($expression) }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card-box tilebox-one">
+                <h4 class="header-title">Training and Validation Loss</h4>
+                <p class="sub-header">
+                    Calculation from training data with epoch 30 - Best Model epoch 13
+                </p>
+
+                <div class="p-3" dir="ltr">
+                    <div id="line-regions-epoch30"
+                         data-loss30="{{ json_encode($loss30) }}"
+                         data-val-loss30="{{ json_encode($valloss30) }}"
+                         data-regions30="{{ json_encode($regions30) }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card-box tilebox-one">
+                <h4 class="header-title">Training and Validation Accuracy</h4>
+                <p class="sub-header">
+                    Calculation from training data with epoch 30 - Best Model epoch 16
+                </p>
+
+                <div class="p-3" dir="ltr">
+                    <div id="line-regions-epoch31"
+                         data-accuracy30="{{ json_encode($accuracy30) }}"
+                         data-val-accuracy30="{{ json_encode($valaccuracy30) }}"
+                         data-regions30="{{ json_encode($regions31) }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-none">
+        <div class="col-md-6">
+            <div class="card-box tilebox-one">
                 <h4 class="header-title">Training with Epoch 10</h4>
                 <p class="sub-header">
                     Calculation from training data with epoch 10
@@ -88,7 +152,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row d-none">
         <div class="col-md-6">
             <div class="card-box tilebox-one">
                 <h4 class="header-title">Training with Epoch 50</h4>
@@ -118,36 +182,6 @@
                          data-loss100="{{ json_encode($loss100) }}"
                          data-accuracy100="{{ json_encode($accuracy100) }}"
                          data-regions100="{{ json_encode($regions100) }}">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card-box tilebox-one">
-                <h4 class="header-title">Report by gender</h4>
-                <p class="sub-header">
-                    Calculation from report data with gender
-                </p>
-
-                <div class="p-3" dir="ltr">
-                    <div id="report-gender" data-report-gender="{{ json_encode($gender) }}">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="card-box tilebox-one">
-                <h4 class="header-title">Report by expression</h4>
-                <p class="sub-header">
-                    Calculation from report data with expression
-                </p>
-
-                <div class="p-3" dir="ltr">
-                    <div id="report-expression" data-report-expression="{{ json_encode($expression) }}">
                     </div>
                 </div>
             </div>

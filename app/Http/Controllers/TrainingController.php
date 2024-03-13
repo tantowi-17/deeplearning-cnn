@@ -9,7 +9,7 @@ class TrainingController extends Controller
 {
     public function index(Request $request)
     {
-        $report = Training::all();
+        $report = Training::orderBy('created_at', 'desc')->get();
 
         $this->data['title'] = 'Training | ' . config('app.name');
         $this->data['description'] = '';

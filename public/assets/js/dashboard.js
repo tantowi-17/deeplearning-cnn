@@ -1,6 +1,8 @@
 $(document).ready(function(){
     var _lineRegionsEpoch10 = $("#line-regions-epoch10");
     var _lineRegionsEpoch20 = $("#line-regions-epoch20");
+    var _lineRegionsEpoch30 = $("#line-regions-epoch30");
+    var _lineRegionsEpoch31 = $("#line-regions-epoch31");
     var _lineRegionsEpoch50 = $("#line-regions-epoch50");
     var _lineRegionsEpoch100 = $("#line-regions-epoch100");
     var _reportGender = $("#report-gender");
@@ -22,6 +24,36 @@ $(document).ready(function(){
                 colors: { loss: "#039cfd", accuracy: "#1bb99a" }
             }
 
+        });
+    }
+
+    /**
+     * Create C3 Line Regions Chart
+     * @param id - jQuery object representing the DOM element where the chart will be bound.
+     * @param loss - Array containing data points for loss.
+     * @param accuracy - Array containing data points for accuracy.
+     * @param regions - Object defining regions for the chart.
+     * @param label - Label for the best epoch point.
+     * @param epoch - Best epoch point.
+     */
+    var createC3LineRegions1 = function (id, loss, accuracy, regions, label, epoch,) {
+        var bestEpochPoint = [ label + epoch ];
+        for (var i = 1; i <= loss.length; i++) {
+            if (i === epoch) {
+                bestEpochPoint.push(accuracy[i - 1]);
+            } else {
+                bestEpochPoint.push(null);
+            }
+        }
+
+        c3.generate({
+            bindto: "#" + id.attr('id'),
+            data: {
+                columns: [loss, accuracy, bestEpochPoint],
+                regions: regions,
+                colors: { loss: "#039cfd", accuracy: "#1bb99a", [bestEpochPoint]: "#ff00dd" }
+            },
+            point: { show: true },
         });
     }
 
@@ -79,6 +111,17 @@ $(document).ready(function(){
     var accuracy20 = _lineRegionsEpoch20.data("accuracy20");
     var regions20 = _lineRegionsEpoch20.data("regions20");
     createC3LineRegions(_lineRegionsEpoch20, loss20, accuracy20, regions20);
+
+    // EPOCH 30
+    var loss30 = _lineRegionsEpoch30.data("loss30");
+    var valLoss30 = _lineRegionsEpoch30.data("val-loss30");
+    var regions30 = _lineRegionsEpoch30.data("regions30");
+
+    var accuracy30 = _lineRegionsEpoch31.data("accuracy30");
+    var valAccuracy30 = _lineRegionsEpoch31.data("val-accuracy30");
+    var regions31 = _lineRegionsEpoch31.data("regions31");
+    createC3LineRegions1(_lineRegionsEpoch30, loss30, valLoss30, regions30, 'Best Epoch:', 13);
+    createC3LineRegions1(_lineRegionsEpoch31, accuracy30, valAccuracy30, regions31, 'Best Epoch:', 16);
 
     // EPOCH 50
     var loss50 = _lineRegionsEpoch50.data("loss50");

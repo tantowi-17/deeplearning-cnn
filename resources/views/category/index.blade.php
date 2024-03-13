@@ -23,6 +23,7 @@
                         <th>Image</th>
                         <th>Category</th>
                         <th>Description</th>
+                        <th>Status</th>
                         <th>Created Date</th>
                         <th>Last Updated</th>
                     </tr>
@@ -31,9 +32,14 @@
                     @foreach($categories as $index => $value)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $value->image }}</td>
-                            <td class="text-center"><span class="badge badge-success badge-pill">{{ $value->category }}</span></td>
+                            <td><img src="assets/images/ekspresi/{{ $value->image }}" class="w-75"></td>
+                            <td class="text-center"><span class="badge badge-light-secondary badge-pill">{{ $value->category }}</span></td>
                             <td class="text-wrap">{{ $value->description }}</td>
+                            <td class="text-wrap">
+                                <span class="badge badge-success badge-pill">
+                                    {{ $value->category == "SENANG" || $value->category == "NETRAL" ? "PUAS" : 'TIDAK PUAS'}}
+                                </span>
+                            </td>
                             <td>{{ $value->created_at}}</td>
                             <td>{{ $value->updated_at }}</td>
                         </tr>

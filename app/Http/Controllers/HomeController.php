@@ -32,6 +32,7 @@ class HomeController extends Controller
 
         $trainings10 = Training::where('epoch', 10)->get();
         $trainings20 = Training::where('epoch', 20)->get();
+        $trainings30 = Training::where('epoch', 30)->get();
         $trainings50 = Training::where('epoch', 50)->get();
         $trainings100 = Training::where('epoch', 100)->get();
 
@@ -57,6 +58,20 @@ class HomeController extends Controller
         foreach ($trainings20 as $training) {
             $loss20[] = round($training->loss, 2);
             $accuracy20[] = round($training->accuracy, 2);
+        }
+
+        $loss30 = ['Loss'];
+        $val_loss30 = ['Val Loss'];
+        foreach ($trainings30 as $training) {
+            $loss30[] = round($training->loss, 2);
+            $val_loss30[] = round($training->val_loss, 2);
+        }
+
+        $accuracy30 = ['Accuracy'];
+        $val_accuracy30 = ['Val Accuracy'];
+        foreach ($trainings30 as $training) {
+            $accuracy30[] = round($training->accuracy, 2);
+            $val_accuracy30[] = round($training->val_accuracy, 2);
         }
 
         $loss50 = ['Loss'];
@@ -105,6 +120,15 @@ class HomeController extends Controller
             $this->data['loss20'] = $loss20;
             $this->data['accuracy20'] = $accuracy20;
             $this->data['regions20'] = $regions10;
+
+            $this->data['loss30'] = $loss30;
+            $this->data['valloss30'] = $val_loss30;
+            $this->data['regions30'] = $regions10;
+
+
+            $this->data['accuracy30'] = $accuracy30;
+            $this->data['valaccuracy30'] = $val_accuracy30;
+            $this->data['regions31'] = $regions10;
 
             $this->data['loss50'] = $loss50;
             $this->data['accuracy50'] = $accuracy50;

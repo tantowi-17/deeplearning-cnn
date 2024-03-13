@@ -33,6 +33,8 @@
                         <th>Epoch</th>
                         <th>Loss</th>
                         <th>Accuracy</th>
+                        <th>Val Loss</th>
+                        <th>Val Accuracy</th>
                         <th>Created Date</th>
                         <th>Last Updated</th>
                     </tr>
@@ -45,6 +47,8 @@
                             <td>{{ $value->epoch }}</td>
                             <td>{{ round($value->loss, 2) }}%</td>
                             <td>{{ round($value->accuracy, 2) }}%</td>
+                            <td>{{ round($value->val_loss, 2) }}%</td>
+                            <td>{{ round($value->val_accuracy, 2) }}%</td>
                             <td>{{ $value->created_at}}</td>
                             <td>{{ $value->updated_at }}</td>
                         </tr>
